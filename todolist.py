@@ -12,7 +12,15 @@ def add_task(task):
     with open("tasks.txt", "a") as file:
         file.write(task + "\n")
 
-print("To-Do App")
-task = input("Tambah tugas: ")
-add_task(task)
-show_tasks()
+while True:
+    print("\n1. Lihat tugas")
+    print("2. Tambah tugas")
+    print("3. Keluar")
+
+    choice = input("Pilih: ")
+
+    if choice == "1":
+        show_tasks()
+    elif choice == "2":
+        task = input("Masukkan tugas: ")
+        add_task(task)
