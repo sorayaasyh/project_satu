@@ -8,5 +8,11 @@ def show_tasks():
     except FileNotFoundError:
         print("Belum ada tugas.")
 
+def add_task(task):
+    with open("tasks.txt", "a") as file:
+        file.write(task + "\n")
+
 print("To-Do App")
+task = input("Tambah tugas: ")
+add_task(task)
 show_tasks()
